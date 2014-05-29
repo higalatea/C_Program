@@ -3,7 +3,7 @@ int getline(char s1[]);
 
 int main(void)
 {
-	char s1[10];
+	char s1[10]; //use 's1[11]' 's1[1000]' is same?
 	int i,n;
 	while (1) {
 		n = getline(s1);
