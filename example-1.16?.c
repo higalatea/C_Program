@@ -4,7 +4,7 @@ int getline(char s1[]);
 int main(void)
 {
 	char s1[10];
-	while (1)
+	while (1)//如果去掉这行的话，程序就会溢出崩溃？
 	printf("%d,%s",getline(s1),s1);
 }
 int getline(char s[])
@@ -29,3 +29,4 @@ int getline(char s[])
 //10,1234567890
 //1234567890123456789
 //19,1234567890123456789
+//7行 while 语句取消后会崩溃 为什么
