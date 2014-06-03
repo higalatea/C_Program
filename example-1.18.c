@@ -12,7 +12,7 @@ int main()
 			for (i = n - 2;line[i] == ' '|| line[i] == '\t';--i)
 				;
 		w = i+1;
-		printf("last no space :%d\n",w);
+		printf("last no white :%d\n",w);
 		
 		printf("After practice:\n");
 		for (i = 0;i<w;++i)
@@ -20,7 +20,7 @@ int main()
 		printf("\n");
 		}
 	  else
-		printf("No space end of this line!\n");   
+		printf("No white end of this line!\n");   
 	}
 }
 
