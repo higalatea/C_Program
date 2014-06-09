@@ -24,4 +24,5 @@ void squeeze(char s[],char ss[])
 		}
 
 		s[n]='\0';	
-	}
+}
+//删除字符串s中出现的所有ss中的字符。
