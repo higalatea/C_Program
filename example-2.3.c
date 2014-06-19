@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 int ishexalphabet(char alphabet);
-int iswhite(char c);
 unsigned long long int htoi(const char s[]);
 int main()
 {
@@ -35,7 +34,7 @@ unsigned long long int htoi(const char s[])
 	unsigned char stoi = 0;//保存將16進制合法字符轉換為對應的10進制的值
 	int i=0;
 	
-	for (i = 0;iswhite(s[i]);++i)//跳過空白
+	for (i = 0;s[i] == ' ' || s[i] == '\n'||s[i] == '\t';++i)//跳過空白
 		;
 		
 	/*跳過0x與0X*/	
@@ -74,17 +73,4 @@ unsigned long long int htoi(const char s[])
 	
 	return answer;
 	
-} 
-
-/*判断是否为空白字符，空格，回车，制表符。这个函数可以简化*/
-int iswhite(char c)
-{
-	if (c == ' ')
-		return 1;
-	if (c == '\t')
-		return 1;
-	if (c == '\n')
-		return 1;
-
-	return 0;		
 }
