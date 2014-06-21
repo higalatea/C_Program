@@ -1,7 +1,7 @@
 int getline(char s[])
 {
 	int i,c;
-	for (i = 0;c != '\n' && (c = getchar()) != EOF;++i) {
+	for (i = 0;(c = getchar()) != '\n' && c != EOF;++i) {
 		s[i] = c;
 	}
 	if (c == '\n') {
