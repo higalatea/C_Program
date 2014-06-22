@@ -1,3 +1,4 @@
+//将换行符制表符换成可见的\n \t
 #include <stdio.h>
 #include <string.h>
 
@@ -7,8 +8,6 @@ int main()
 {
 	char s[100];
 	char t[100];
-	printf("Input s string\n");
-	getline(s);
 	printf("Input t string\n");
 	getline(t);
 	escape(s,t);
@@ -18,42 +17,27 @@ int main()
 void escape(char s[],char t[])
 {
 	int i = 0;
-	int ii = 0;//i保存s的长度,ii保存t的长度
-	int m;//循环字符串t
-	
-	/*获取字符串s的长度*/
-	while (s[i] != '\0') {
-		++i;
-	}
-		
-	/*获取字符串t的长度*/	
-	while(t[ii] != '\0')
-		++ii;
-	
+	int m;
+
 	/*字符串t接到字符串s的末尾，并将字符串t中的换行符和制表符分别打印成\n与\t的可见形式*/
 	for (m = 0;t[m] != '\0';++m){
 		switch (t[m]) {
 			case '\n': 
-				s[i] = '\\';
-				++i;
-				s[i] = 'n';
-				++i;
+				s[i++] = '\\';
+				s[i++] = 'n';
 				break;
 			case '\t':
-				s[i] = '\\';
-				++i;
-				s[i] = 't';
-				++i;
+				s[i++] = '\\';
+				s[i++] = 't';
 				break;
 			default: 
-				s[i] = t[m];
-				++i;
+				s[i++] = t[m];
 				break;
 		}
 	}
-	
+
 	s[i] = '\0';
-		
+
 }
 
 int getline(char s[])
